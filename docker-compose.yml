@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services: 
     angular-ui:
@@ -6,7 +6,10 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "4200:4200"
+            - target: 4200
+              published: 4200
+              protocol: tcp
+              mode: host
         volumes:
             - .:/app
-        command: ng serve
+        command: ng serve --host 0.0.0.0 --disableHostCheck --poll=2000
