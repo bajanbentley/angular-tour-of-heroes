@@ -12,4 +12,4 @@ services:
               mode: host
         volumes:
             - .:/app
-        command: ng serve --host 0.0.0.0 --disableHostCheck --poll=2000
+        command: npm install && ng serve --host 0.0.0.0 --disableHostCheck --poll=2000
